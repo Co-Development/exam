@@ -27,3 +27,5 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_right|varchar(5)|否||题目正确选项|
+
+>2017/11/28 word转成excel(判断题“0”代表错误，“1”代表正确)
