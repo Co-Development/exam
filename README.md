@@ -28,4 +28,4 @@
 |test_c|varchar(255)|否||题目C选项|
 |test_right|varchar(5)|否||题目正确选项|
 
->2017/11/28 word转成excel(判断题“0”代表错误，“1”代表正确)
+#2017/11/28 word转成excel位置：/resources/bank/全体党员学习学习“十九大”精神和党纪党规应知应会题.xlsx(判断题“0”代表错误，“1”代表正确)
