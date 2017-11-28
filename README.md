@@ -8,7 +8,5 @@
 > 小罗正式加入
 
 ## 数据库
-### 初始化
-* 新增用户TheThreeStooges，密码sasasa
-* 新建数据库名字为exam
-* 执行项目根目录中的exam.sql文件
+### 连接
+* 地址118.89.101.23，用户名TheThreeStooges，密码sasasa，数据库名exam
