@@ -5,4 +5,4 @@
 
 ## 数据库
 ### 连接
-* 地址118.89.101.23，用户名TheThreeStooges，密码sasasa
+* 地址118.89.101.23，用户名TheThreeStooges，密码sasasa，数据库名exam
