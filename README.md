@@ -24,7 +24,7 @@
 
 |字段名|数据类型|是否为空|主外键|备注|
 |:--|:--|:--|:--|:--|
-|test_id|int|否|主键|题目ID|
+|test_id|int|否|主键|题目ID，自动递增|
 |test_question|varchar(255)|否||题目问题|
 |test_a|varchar(255)|否||题目A选项|
 |test_b|varchar(255)|否||题目B选项|
@@ -35,7 +35,7 @@
 
 |字段名|数据类型|是否为空|主外键|备注|
 |:--|:--|:--|:--|:--|
-|test_id|int|否|主键|题目ID|
+|test_id|int|否|主键|题目ID，自动递增|
 |test_question|varchar(255)|否||题目问题|
 |test_a|varchar(255)|否||题目A选项|
 |test_b|varchar(255)|否||题目B选项|
@@ -47,7 +47,7 @@
 
 |字段名|数据类型|是否为空|主外键|备注|
 |:--|:--|:--|:--|:--|
-|test_id|int|否|主键|题目ID|
+|test_id|int|否|主键|题目ID，自动递增|
 |test_question|varchar(255)|否||题目问题|
 |test_a|varchar(255)|否||题目A选项|
 |test_b|varchar(255)|否||题目B选项|
@@ -59,7 +59,7 @@
 
 |字段名|数据类型|是否为空|主外键|备注|
 |:--|:--|:--|:--|:--|
-|test_id|int|否|主键|题目ID|
+|test_id|int|否|主键|题目ID，自动递增|
 |test_question|varchar(255)|否||题目问题|
 |test_result|int|否||题目是否正确，1为正确，2为错误。|
 
