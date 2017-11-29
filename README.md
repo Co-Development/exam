@@ -29,7 +29,7 @@
 |test_a|varchar(255)|否||题目A选项|
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
-|test_right|varchar(255)|否||题目正确选项内容|
+|test_right|varchar(255)|否||题目正确内容|
 
 * 四项单选题（test2）
 
@@ -41,7 +41,7 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_d|varchar(255)|否||题目D选项|
-|test_right|varchar(255)|否||题目正确选项内容|
+|test_right|varchar(255)|否||题目正确内容|
 
 * 四项多选题（test3）
 
@@ -53,7 +53,7 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_d|varchar(255)|否||题目D选项|
-|test_right|varchar(255)|否||题目正确选项内容，多条用!@!隔开|
+|test_right|varchar(255)|否||题目正确内容，多条用!@!隔开|
 
 * 判断题（test4）
 
