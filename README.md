@@ -17,7 +17,7 @@
 * 用户名TheThreeStooges
 * 密码sasasa
 ### 表
-* 题库表（test）
+* 三项单选表（test1）
 
 |字段名|数据类型|是否为空|主外键|备注|
 |:--|:--|:--|:--|:--|
@@ -27,5 +27,37 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_right|varchar(5)|否||题目正确选项|
+
+* 四项单选题（test2）
+
+|字段名|数据类型|是否为空|主外键|备注|
+|:--|:--|:--|:--|:--|
+|test_id|int|否|主键|题目ID|
+|test_question|varchar(255)|否||题目问题|
+|test_a|varchar(255)|否||题目A选项|
+|test_b|varchar(255)|否||题目B选项|
+|test_c|varchar(255)|否||题目C选项|
+|test_d|varchar(255)|否||题目D选项|
+|test_right|varchar(5)|否||题目正确选项|
+
+* 四项多选题（test3）
+
+|字段名|数据类型|是否为空|主外键|备注|
+|:--|:--|:--|:--|:--|
+|test_id|int|否|主键|题目ID|
+|test_question|varchar(255)|否||题目问题|
+|test_a|varchar(255)|否||题目A选项|
+|test_b|varchar(255)|否||题目B选项|
+|test_c|varchar(255)|否||题目C选项|
+|test_d|varchar(255)|否||题目D选项|
+|test_right|varchar(5)|否||题目正确选项|
+
+* 判断题（test4）
+
+|字段名|数据类型|是否为空|主外键|备注|
+|:--|:--|:--|:--|:--|
+|test_id|int|否|主键|题目ID|
+|test_question|varchar(255)|否||题目问题|
+|test_result|int|否||题目是否正确，1为正确，2为错误。|
 
 #2017/11/28 word转成excel位置：/resources/bank/全体党员学习学习“十九大”精神和党纪党规应知应会题.xlsx(判断题“0”代表错误，“1”代表正确)
