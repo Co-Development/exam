@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -71,7 +72,9 @@ public class ExamenController {
 		}
 		
 		// 考生id存入session
-		request.getSession().setAttribute("exam-id", examen.getExamen_id());
+		HttpSession session = request.getSession();
+		session.setAttribute("exam-id", examen.getExamen_id());
+		session.setMaxInactiveInterval(86400); // 默认保存1天
 		
 		// 设置相应数据
 		map.put("state", 1);

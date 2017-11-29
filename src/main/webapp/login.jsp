@@ -22,13 +22,14 @@
 <!-- login request -->
 <script type="text/javascript">
 $('#submit').on('click', function(){
+	// 验证登录数据
 	var examen_name = $('#examen_name').val();
 	if(examen_name == '') {
 		alert("姓名不能为空！");
 		$('#examen_name').focus();
 		return;
 	}
-	
+	// ajax提交表单
 	$.ajax({
 		type:'POST',
 		async:false,
