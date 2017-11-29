@@ -29,7 +29,7 @@
 |test_a|varchar(255)|否||题目A选项|
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
-|test_right|varchar(5)|否||题目正确选项|
+|test_right|varchar(1)|否||题目正确选项|
 
 * 四项单选题（test2）
 
@@ -41,7 +41,7 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_d|varchar(255)|否||题目D选项|
-|test_right|varchar(5)|否||题目正确选项|
+|test_right|varchar(1)|否||题目正确选项|
 
 * 四项多选题（test3）
 
@@ -53,7 +53,7 @@
 |test_b|varchar(255)|否||题目B选项|
 |test_c|varchar(255)|否||题目C选项|
 |test_d|varchar(255)|否||题目D选项|
-|test_right|varchar(5)|否||题目正确选项|
+|test_right|varchar(4)|否||题目正确选项|
 
 * 判断题（test4）
 
@@ -61,7 +61,7 @@
 |:--|:--|:--|:--|:--|
 |test_id|int|否|主键|题目ID，自动递增|
 |test_question|varchar(255)|否||题目问题|
-|test_result|int|否||题目是否正确，1为正确，2为错误。|
+|test_result|int|否||题目是否正确，1为正确，0为错误。|
 
 * 考生表（examen）
 
