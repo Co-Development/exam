@@ -3,6 +3,7 @@ package com.jjvu.exam.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.jjvu.exam.po.Examen;
 
@@ -30,5 +31,13 @@ public interface ExamenMapper {
 	 */
 	@Select("SELECT * FROM `examen` WHERE examen_id=#{examen_id}")
 	Examen findById(@Param("examen_id") int examen_id);
+
+	/**
+	 * 打分
+	 * @param examen_id
+	 * @param score
+	 */
+	@Update("UPDATE `examen` SET `examen_score`=#{score} WHERE (`examen_id`=#{examen_id})")
+	void markScoreById(@Param("examen_id") int examen_id, @Param("score") int score);
 	
 }

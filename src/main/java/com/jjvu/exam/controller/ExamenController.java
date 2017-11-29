@@ -23,6 +23,13 @@ import com.jjvu.exam.po.Test1;
 import com.jjvu.exam.po.Test2;
 import com.jjvu.exam.po.Test3;
 import com.jjvu.exam.po.Test4;
+import com.jjvu.exam.po.X1;
+import com.jjvu.exam.po.X2;
+import com.jjvu.exam.po.X3;
+import com.jjvu.exam.po.Y1;
+import com.jjvu.exam.po.Y2;
+import com.jjvu.exam.po.Y3;
+import com.jjvu.exam.utils.MarkScore;
 import com.jjvu.exam.utils.RandomNumber;
 
 /**
@@ -273,6 +280,44 @@ public class ExamenController {
 		model.addAttribute("list4", list4);
 		
 		return "start_exam";
+	}
+	
+	/**
+	 * 提交试卷并打分
+	 * @param request
+	 * @param x1
+	 * @param y1
+	 * @param x2
+	 * @param y2
+	 * @param x3
+	 * @param y3
+	 * @return
+	 */
+	@RequestMapping(value = "/testSubmit", method = {RequestMethod.POST})
+	@ResponseBody HashMap<Object, Object> testSubmit(HttpServletRequest request, X1 x1, Y1 y1, X2 x2, Y2 y2, X3 x3, Y3 y3) {
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
+		map.put("state", 0); // state为0表示有题目还没做
+		
+		int score = 0;
+		try {
+			// 打分
+			score += MarkScore.sum1(x1, y1);
+			score += MarkScore.sum2(x2, y2);
+			score += MarkScore.sum3(x3, y3);
+		} catch (Exception e) {
+			return map;
+		}
+		
+		// 通过考生ID查询考生信息
+		int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
+		// 将分数存入数据库
+		examenMapper.markScoreById(examen_id, score);
+		
+		// 设置相应数据
+		map.put("state", 1);
+		map.put("url", "/examen/main");
+		
+		return map;
 	}
 	
 }
