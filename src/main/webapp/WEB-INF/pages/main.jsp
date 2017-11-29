@@ -13,7 +13,7 @@
 分数：${exam_score}
 </c:if>
 <c:if test="${exam_finish == false}">
-<input type="button" value="开始考试">
+<input type="button" onclick="location.href='/examen/start'" value="开始考试">
 </c:if>
 </body>
 </html>

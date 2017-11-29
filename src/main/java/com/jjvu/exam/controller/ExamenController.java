@@ -53,6 +53,7 @@ public class ExamenController {
 	 * 考生登录
 	 * @param examen_name 考生姓名
 	 * @param examen_dpm 考生所在部门
+	 * @param request
 	 * @return
 	 */
 	@RequestMapping(value = "/login", method = {RequestMethod.POST})
@@ -86,19 +87,14 @@ public class ExamenController {
 	/**
 	 * 登录后的后台
 	 * @param request
+	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/main", method = {RequestMethod.GET})
 	String main(HttpServletRequest request, Model model) {
-		// 验证是否登录
-		Object object = request.getSession().getAttribute("exam-id");
-		if(object == null) {
-			return "../../login";
-		}
-		
 		try {
 			// 通过考生ID查询考生信息
-			int examen_id = Integer.parseInt(object.toString());
+			int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
 			Examen examen = examenMapper.findById(examen_id);
 			// 验证考试是否完成
 			if(examen.getExamen_score() == 0) { // 还没考试，jsp显示开始考试按钮
