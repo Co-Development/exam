@@ -109,6 +109,11 @@ public class ExamenController {
 		}
 	}
 	
+	/**
+	 * 开始考试
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value = "/start", method = {RequestMethod.GET})
 	String start(Model model) {
 		// 容器初始化-考试试卷题
@@ -117,17 +122,92 @@ public class ExamenController {
 		ArrayList<Test3> list3 = new ArrayList<Test3>();
 		ArrayList<Test4> list4 = new ArrayList<Test4>();
 		
-		// 共40道三项单选题，随机生成35道
-		int[] ids = RandomNumber.get(40, 35);
+		// 共38道三项单选题，随机生成35道
+		int[] ids = RandomNumber.get(38, 35);
 		for (int id : ids) {
 			Test1 test1 = test1Mapper.findById(id);
+			
+			// 选项打乱
+			int[] options = RandomNumber.get(3, 3);
+			String test_a = test1.getTest_a();
+			String test_b = test1.getTest_b();
+			String test_c = test1.getTest_c();
+			int count = 0;
+			String str = null;
+			for (int option : options) {
+				count++;
+				switch (count) {
+				case 1:
+					str = test_a;
+					break;
+				case 2:
+					str = test_b;
+					break;
+				case 3:
+					str = test_c;
+					break;
+				}
+				switch (option) {
+				case 1:
+					test1.setTest_a(str);
+					break;
+				case 2:
+					test1.setTest_b(str);
+					break;
+				case 3:
+					test1.setTest_c(str);
+					break;
+				}
+			}
+			
 			list1.add(test1);
 		}
 		
-		// 共15道四项单选题，随机生成10道
-		ids = RandomNumber.get(15, 10);
+		// 共17道四项单选题，随机生成10道
+		ids = RandomNumber.get(17, 10);
 		for (int id : ids) {
 			Test2 test2 = test2Mapper.findById(id);
+			
+			// 选项打乱
+			int[] options = RandomNumber.get(4, 4);
+			String test_a = test2.getTest_a();
+			String test_b = test2.getTest_b();
+			String test_c = test2.getTest_c();
+			String test_d = test2.getTest_d();
+			int count = 0;
+			String str = null;
+			for (int option : options) {
+				count++;
+				switch (count) {
+				case 1:
+					str = test_a;
+					break;
+				case 2:
+					str = test_b;
+					break;
+				case 3:
+					str = test_c;
+					break;
+				case 4:
+					str = test_d;
+					break;
+				}
+				switch (option) {
+				case 1:
+					test2.setTest_a(str);
+					break;
+				case 2:
+					test2.setTest_b(str);
+					break;
+				case 3:
+					test2.setTest_c(str);
+					break;
+				case 4:
+					test2.setTest_d(str);
+					break;
+				}
+			}
+			
 			list2.add(test2);
 		}
 		
@@ -135,6 +215,47 @@ public class ExamenController {
 		ids = RandomNumber.get(25, 20);
 		for (int id : ids) {
 			Test3 test3 = test3Mapper.findById(id);
+			
+			// 选项打乱
+			int[] options = RandomNumber.get(4, 4);
+			String test_a = test3.getTest_a();
+			String test_b = test3.getTest_b();
+			String test_c = test3.getTest_c();
+			String test_d = test3.getTest_d();
+			int count = 0;
+			String str = null;
+			for (int option : options) {
+				count++;
+				switch (count) {
+				case 1:
+					str = test_a;
+					break;
+				case 2:
+					str = test_b;
+					break;
+				case 3:
+					str = test_c;
+					break;
+				case 4:
+					str = test_d;
+					break;
+				}
+				switch (option) {
+				case 1:
+					test3.setTest_a(str);
+					break;
+				case 2:
+					test3.setTest_b(str);
+					break;
+				case 3:
+					test3.setTest_c(str);
+					break;
+				case 4:
+					test3.setTest_d(str);
+					break;
+				}
+			}
+			
 			list3.add(test3);
 		}
 		
@@ -151,7 +272,7 @@ public class ExamenController {
 		model.addAttribute("list3", list3);
 		model.addAttribute("list4", list4);
 		
-		return "";
+		return "start_exam";
 	}
 	
 }
