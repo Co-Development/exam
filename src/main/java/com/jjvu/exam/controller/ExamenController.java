@@ -1,17 +1,23 @@
 package com.jjvu.exam.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jjvu.exam.mapper.ExamenMapper;
 import com.jjvu.exam.mapper.Test1Mapper;
 import com.jjvu.exam.mapper.Test2Mapper;
 import com.jjvu.exam.mapper.Test3Mapper;
 import com.jjvu.exam.mapper.Test4Mapper;
+import com.jjvu.exam.po.Examen;
 import com.jjvu.exam.po.Test1;
 import com.jjvu.exam.po.Test2;
 import com.jjvu.exam.po.Test3;
@@ -49,13 +55,63 @@ public class ExamenController {
 	 * @return
 	 */
 	@RequestMapping(value = "/login", method = {RequestMethod.POST})
-	String login(String examen_name, String examen_dpm) {
+	@ResponseBody HashMap<Object, Object> login(String examen_name, String examen_dpm, HttpServletRequest request) {
+		HashMap<Object, Object> map = new HashMap<Object, Object>();
+		map.put("state", 0); // state为0表示登录信息有误，为1表示登录成功
 		
-		return "";
+		// 去除姓名两边空格
+		examen_name = examen_name.trim();
+		
+		// 登录信息查询
+		Examen examen = examenMapper.findByName_Dpm(examen_name, examen_dpm);
+		
+		// 验证登录信息
+		if(examen == null) {
+			return map;
+		}
+		
+		// 考生id存入session
+		request.getSession().setAttribute("exam-id", examen.getExamen_id());
+		
+		// 设置相应数据
+		map.put("state", 1);
+		map.put("url", "/examen/main");
+		
+		return map;
+	}
+	
+	/**
+	 * 登录后的后台
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/main", method = {RequestMethod.GET})
+	String main(HttpServletRequest request, Model model) {
+		// 验证是否登录
+		Object object = request.getSession().getAttribute("exam-id");
+		if(object == null) {
+			return "../../login";
+		}
+		
+		try {
+			// 通过考生ID查询考生信息
+			int examen_id = Integer.parseInt(object.toString());
+			Examen examen = examenMapper.findById(examen_id);
+			// 验证考试是否完成
+			if(examen.getExamen_score() == 0) { // 还没考试，jsp显示开始考试按钮
+				model.addAttribute("exam_finish", false);
+			} else { // 考试完成，发送分数
+				model.addAttribute("exam_finish", true);
+				model.addAttribute("exam_score", examen.getExamen_score());
+			}
+			return "main";
+		} catch (Exception e) {
+			return "../../login";
+		}
 	}
 	
 	@RequestMapping(value = "/start", method = {RequestMethod.GET})
-	String start() {
+	String start(Model model) {
 		// 容器初始化-考试试卷题
 		ArrayList<Test1> list1 = new ArrayList<Test1>();
 		ArrayList<Test2> list2 = new ArrayList<Test2>();
@@ -89,6 +145,12 @@ public class ExamenController {
 			Test4 test4 = test4Mapper.findById(id);
 			list4.add(test4);
 		}
+		
+		// 将试题发送至jsp
+		model.addAttribute("list1", list1);
+		model.addAttribute("list2", list2);
+		model.addAttribute("list3", list3);
+		model.addAttribute("list4", list4);
 		
 		return "";
 	}
