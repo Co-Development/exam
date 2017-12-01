@@ -1,0 +1,76 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+}
+a:link {
+	color: #696969;
+}
+a:visited {
+	color: #696969;
+}
+a:hover {
+	color: #fff;
+}
+span {
+	font-size: 15px;
+}
+.login {
+	width: 300px;
+	background-color: #f5f5f5;
+	margin: 250px auto;
+}
+.login-nav p {
+	color: black;
+	font-size: 25px;
+	padding: 20px 0 0 20px;
+}
+.login-from {
+	padding: 0 20px 20px 20px;
+}
+.login-text {
+	color: black;
+	font-size: 15px;
+	margin: 20px 0 0 0;
+	font-weight: bold;
+}
+.enter {
+	width: 250px;
+	font-size: 15px;
+	padding: 7px 5px;
+	border: 1px solid #3385ff;
+}
+.login-select {
+	width: 264px;
+	font-size: 15px;
+	padding: 10px 5px;
+}
+#tips {
+	color: blue;
+	font-size: 15px;
+	text-align: right;
+	padding-top: 10px;
+}
+.button {
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	width: 260px;
+	border: 1px solid #fff;
+	background-color: #3385ff;
+	margin: 15px 0 0 0;
+	padding: 5px 0;
+}
+
+.nav {
+	background-color: #81C7D4;
+}
+
+.exam_dpm {
+	width: 262px;
+	font-size: 15px;
+	padding: 7px 5px;
+	border: 1px solid #3385ff;
+}
