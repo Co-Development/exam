@@ -7,6 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>登录</title>
 <link href="login.css" rel="stylesheet" type="text/css" />
+<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
           <option value="教务处">教务处</option>
           <option value="学生处">学生处</option>
         </select>
-        <input type="button" value="Login" class="button" id="submit">
+        <input type="button" value="登录" class="button" id="submit">
       </form>
     </div>
   </div>
