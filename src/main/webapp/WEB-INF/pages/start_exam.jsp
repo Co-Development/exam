@@ -8,6 +8,8 @@
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 		<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="../asstes/js/leftTime.min.js"></script>
+		<script src="../asstes/js/custom.js"></script>
 	</head>
 	<body style="padding-top: 70px;">
 	
@@ -17,7 +19,7 @@
 			<div class="container">
 				
 				<p class="navbar-text">剩余时间</p>
-				<p class="navbar-text">00:00:00</p>
+				<p class="navbar-text" id="leftTimeP">00:00</p>
 
 				<input class="navbar-right btn btn-default navbar-btn" type="button" id="submit" value="交卷">
 			</div>
