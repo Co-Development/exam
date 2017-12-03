@@ -8,8 +8,8 @@
 		<title>Document</title>
 		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 		<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="../asstes/js/leftTime.min.js"></script>
-		<script src="../asstes/js/custom.js"></script>
+		<script src="../assets/js/leftTime.min.js"></script>
+		<script src="../assets/js/custom.js"></script>
 	</head>
 	<body style="padding-top: 70px;">
 	
