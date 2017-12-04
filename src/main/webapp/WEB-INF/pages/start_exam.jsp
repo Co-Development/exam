@@ -158,24 +158,61 @@
 
 	<script type="text/javascript">
 	$('#submit').on('click', function(){
-		// ajax提交表单
-		$.ajax({
-			type:'POST',
-			async:false,
-			url:'/examen/testSubmit',
-			data:$('#exam_form').serialize(),
-			dataType:'json',
-			success:function(data){
-				if(data.state == '1') {
-					location.href=data.url;
-				} else {
-					alert('请将试卷完成！');
+		
+		// 判断题目是否全部完成
+		// 记录没有做的题号
+		var index = "";
+		//三选一
+		<c:forEach items="${list1}" var="test1" varStatus="status">
+		if(!($("input[name='x1_${status.count}']").is(':checked'))){
+			index += "${status.count}"+"、";
+		}
+		</c:forEach>
+		
+		//四选一
+		<c:forEach items="${list2}" var="test2" varStatus="status">
+		if(!($("input[name='x1_${status.count+35}']").is(':checked'))){
+			index += "${status.count+35}"+"、";
+		}
+		</c:forEach>
+		
+		//多选
+		<c:forEach items="${list3}" var="test3" varStatus="status">
+		if(!($("input[name='x2_${status.count+45}']").is(':checked'))){
+			index += "${status.count+45}"+"、";
+		}
+		</c:forEach>
+		
+		//判断
+		<c:forEach items="${list4}" var="test4" varStatus="status">
+		if(!($("input[name='x3_${status.count+65}']").is(':checked'))){
+			index += "${status.count+65}"+"、";
+		}
+		</c:forEach>
+		
+		if(index != ""){
+			index = index.substring(0,index.length-1);
+			alert("第"+index+"题未选择");
+		}else{
+			// ajax提交表单
+			$.ajax({
+				type:'POST',
+				async:false,
+				url:'/examen/testSubmit',
+				data:$('#exam_form').serialize(),
+				dataType:'json',
+				success:function(data){
+					if(data.state == '1') {
+						location.href=data.url;
+					} else {
+						alert('请将试卷完成！');
+					}
+				},
+				error:function(XMLHttpRequest, textStatus, errorThrown){
+					alert(textStatus+XMLHttpRequest.status);  
 				}
-			},
-			error:function(XMLHttpRequest, textStatus, errorThrown){
-				alert(textStatus+XMLHttpRequest.status);  
-			}
-		});
+			});
+		}
 	});
 	</script>
 </html>
