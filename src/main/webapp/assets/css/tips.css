@@ -1,3 +1,6 @@
+.main {
+    margin-top: 195px;
+}
 .box {
 	width: 700px;
 	background-color: #f5f5f5;
@@ -21,4 +24,19 @@
 #score {
 	font-size: 35px;
     color: red;
+}
+.top{
+	width:980px;
+	margin: 50px auto;
+	background: url("../img/bg_top.png");
+}
+.top .pic1{
+	height: 130px;
+	 width: 490px; 
+	 background: url("../img/201710161448522732.png");
+}
+.top .pic2{
+	height: 180px;
+	 width: 600px; 
+	 background: url("../img/baifan.png"); margin: -180px 490px; 
 }
