@@ -1,14 +1,14 @@
 $(function(){
 	var _this=$("#leftTimeP");
 	if(!_this.hasClass("on")){
-		$.leftTime(2700,function(d){
+		$.leftTime(10,function(d){
 			if(d.status){
 				_this.addClass("on");
 				_this.html(d.m+":"+d.s);
 			}else{
 				_this.removeClass("on");
 				alert("答题时间到，将自动提交答案。");
-				$("input").attr("disabled");
+				$("input").attr("disabled","disabled");
 				$.ajax({
 					type:'POST',
 					async:false,
