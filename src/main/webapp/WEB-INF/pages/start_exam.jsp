@@ -11,11 +11,13 @@
 		<script src="../assets/js/leftTime.min.js"></script>
 		<script src="../assets/js/custom.js"></script>
 	</head>
-	<body style="padding-top: 70px;">
+	<body style="padding-top: 50px; background-color:#e0f1f8">
 	
 		<!--nav导航栏-->
 		<form>
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		
+		<nav class="navbar navbar-default navbar-fixed-top"  role="navigation">
+			
 			<div class="container">
 				
 				<p class="navbar-text">剩余时间</p>
@@ -27,11 +29,12 @@
 		
 		<!---->
 
-		<div class="jumbotron">
-			<div class="container">
-				<h2>考核</h2>
-				<p>这里可以写规则注意事项之类的</p>
+		<div class="jumbotron top" style="height: 180px; background:url('../assets/img/bg_top.png');">
+		<div class="container">
+			<div style="height: 130px;width: 490px;background: url('../assets/img/201710161448522732.png');"></div>
+			<div style="height: 180px;width: 600px;background: url('../assets/img/baifan.png');margin: -180px 490px;position: relative;">
 			</div>
+		</div>
 		</div>
 
 		<div class="container">

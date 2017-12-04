@@ -11,7 +11,28 @@
 </head>
 
 <body>
-<div class="main">
+
+<div class="top">
+	
+</div>
+<div class="center">
+  <form id="login_form">
+          
+       	 姓名:<input type="text" name="examen_name" id="examen_name" class="enter">
+       	  所在部门:
+        <select name="examen_dpm" class="exam_dpm">
+          <option value="办公室">办公室</option>
+          <option value="教务处">教务处</option>
+          <option value="学生处">学生处</option>
+        </select></br></br>
+        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        	<input type="button" value="登录" class="button" id="submit">
+      </form>
+</div>
+<div class="blank">
+</div>
+<div class="bottom"></div>
+<!-- <div class="main">
   <div class="login">
     <div class="login-nav">
       <p>考生登录</p>
@@ -34,7 +55,7 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- login request -->
 <script type="text/javascript">
