@@ -72,3 +72,7 @@
 |examen_dpm|varchar(30)|否||考生所在部门|
 |examen_score|int|是||考生成绩|
 |examen_time|datetime |是||考生考试时间|
+
+##打包部署
+*引文含有JSP页面必须打包成war包，war包的运行方式与jar包的方式一样，在安装有java环境的服务器下以java -jar命令执行
+*在maven中指定打包是main函数

@@ -49,12 +49,15 @@
 
 	</dependencies>
 
-	<!-- Package as an executable jar -->
+	<!-- Package as an executable war -->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.jjvu.exam.Application</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -85,4 +88,5 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+	<packaging>war</packaging>
 </project>
