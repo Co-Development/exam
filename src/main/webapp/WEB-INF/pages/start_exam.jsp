@@ -14,7 +14,7 @@
 	<body style="padding-top: 50px; background-color:#e0f1f8">
 	
 		<!--nav导航栏-->
-		<form>
+		<form id="exam_form">
 		
 		<nav class="navbar navbar-default navbar-fixed-top"  role="navigation">
 			
@@ -52,13 +52,13 @@
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="x1_${status.count}">
+								<input type="radio" name="x1_${status.count}" value="${test1.test_b}">
 								B. ${test1.test_b} 
 							</label>
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="x1_${status.count}">
+								<input type="radio" name="x1_${status.count}" value="${test1.test_c}">
 								C. ${test1.test_c}
 							</label>
 						</div>
