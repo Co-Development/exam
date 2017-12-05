@@ -1,7 +1,7 @@
 $(function(){
 	var _this=$("#leftTimeP");
 	if(!_this.hasClass("on")){
-		$.leftTime(10,function(d){
+		$.leftTime(2100,function(d){
 			if(d.status){
 				_this.addClass("on");
 				_this.html(d.m+":"+d.s);
