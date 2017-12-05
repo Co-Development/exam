@@ -205,11 +205,7 @@
 				data:$('#exam_form').serialize(),
 				dataType:'json',
 				success:function(data){
-					if(data.state == '1') {
 						location.href=data.url;
-					} else {
-						alert('请将试卷完成！');
-					}
 				},
 				error:function(XMLHttpRequest, textStatus, errorThrown){
 					alert(textStatus+XMLHttpRequest.status);  

@@ -296,17 +296,17 @@ public class ExamenController {
 	@RequestMapping(value = "/testSubmit", method = {RequestMethod.POST})
 	@ResponseBody HashMap<Object, Object> testSubmit(HttpServletRequest request, X1 x1, Y1 y1, X2 x2, Y2 y2, X3 x3, Y3 y3) {
 		HashMap<Object, Object> map = new HashMap<Object, Object>();
-		map.put("state", 0); // state为0表示有题目还没做
+//		map.put("state", 0); // state为0表示有题目还没做
 		
 		int score = 0;
-		try {
+//		try {
 			// 打分
-			score += MarkScore.sum1(x1, y1);
-			score += MarkScore.sum2(x2, y2);
-			score += MarkScore.sum3(x3, y3);
-		} catch (Exception e) {
-			return map;
-		}
+		score += MarkScore.sum1(x1, y1);
+		score += MarkScore.sum2(x2, y2);
+		score += MarkScore.sum3(x3, y3);
+//		} catch (Exception e) {
+//			return map;
+//		}
 		
 		// 通过考生ID查询考生信息
 		int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
