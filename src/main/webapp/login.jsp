@@ -30,14 +30,14 @@
           <option value="机关第二支部">机关第二支部</option>
           <option value="机关第三支部">机关第三支部</option>
           <option value="机关第四支部">机关第四支部</option>
-          <option value="护理学院教工支部">机关第五支部</option>
+          <option value="机关第五支部">机关第五支部</option>
           <option value="机关第六支部">机关第六支部</option>
           
           <option value="继续教育学院教工支部">继续教育学院教工支部</option>
           <option value="建筑工程学院教工支部">建筑工程学院教工支部</option>
           <option value="经济管理学院教工支部">经济管理学院教工支部</option>
           <option value="农业经济技术学院教工支部">农业经济技术学院教工支部</option>
-          <option value="护理学院教工支部">师范学院教工支部</option>
+          <option value="师范学院教工支部">师范学院教工支部</option>
           
           <option value="思想政治理论课教学科研部教工支部">思想政治理论课教学科研部教工支部</option>
           <option value="文化旅游学院教工支部">文化旅游学院教工支部</option>
