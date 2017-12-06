@@ -52,7 +52,7 @@
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="x1_${status.count}" value="${test1.test_b}">
+								<input class="b" type="radio" name="x1_${status.count}" value="${test1.test_b}">
 								B. ${test1.test_b} 
 							</label>
 						</div>
@@ -79,7 +79,7 @@
 						</div>
 						<div class="radio">
 							<label>
-								<input type="radio" name="x1_${status.count+35}" value="${test2.test_b}">
+								<input class="b" type="radio" name="x1_${status.count+35}" value="${test2.test_b}">
 								B. ${test2.test_b}
 							</label>
 						</div>
@@ -113,13 +113,13 @@
 						</div>
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="x2_${status.count+45}" value="${test3.test_b}">
+								<input class="b" type="checkbox" name="x2_${status.count+45}" value="${test3.test_b}">
 								B. ${test3.test_b}
 							</label>
 						</div>
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="x2_${status.count+45}" value="${test3.test_c}">
+								<input class="b" type="checkbox" name="x2_${status.count+45}" value="${test3.test_c}">
 								C. ${test3.test_c}
 							</label>
 						</div>
@@ -141,7 +141,7 @@
 						<label>${status.count+65}、${test4.test_question}</label>
 						<div>
 						<label class="radio-inline">
-							<input type="radio" name="x3_${status.count+65}" value="1"> 正确
+							<input class="b" type="radio" name="x3_${status.count+65}" value="1"> 正确
 						</label>
 
 						<label class="radio-inline">
@@ -155,7 +155,7 @@
 				</c:forEach>
 
 		</div>
-		<input id="examTime" name="examTime" type="hidden" value="2700">
+		<input id="examTime" name="examTime" type="hidden" value="45:00">
 		</form>
 		
 	</body>
@@ -198,8 +198,6 @@
 			index = index.substring(0,index.length-1);
 			alert("第"+index+"题未选择");
 		}else{
-			var time = $("leftTimeP").text();
-			$("#examTime").attr("value",time);
 			// ajax提交表单
 			$.ajax({
 				type:'POST',
