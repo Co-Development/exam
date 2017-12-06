@@ -32,7 +32,12 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-
+		<!--热部署  -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
+		</dependency>
 		<!-- 支持jsp -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
