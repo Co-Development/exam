@@ -21,9 +21,31 @@
        	 姓名:<input type="text" name="examen_name" id="examen_name" class="enter">
        	  所在部门:
         <select name="examen_dpm" class="exam_dpm">
-          <option value="办公室">办公室</option>
-          <option value="教务处">教务处</option>
-          <option value="学生处">学生处</option>
+          <option value="非党员干部">非党员干部</option>
+          <option value="公共课教学部教工支部">公共课教学部教工支部</option>
+          <option value="护理学院教工支部">护理学院教工支部</option>
+          <option value="机电工程学院教工支部">机电工程学院教工支部</option>
+          <option value="机关第一支部">机关第一支部</option>
+          
+          <option value="机关第二支部">机关第二支部</option>
+          <option value="机关第三支部">机关第三支部</option>
+          <option value="机关第四支部">机关第四支部</option>
+          <option value="护理学院教工支部">机关第五支部</option>
+          <option value="机关第六支部">机关第六支部</option>
+          
+          <option value="继续教育学院教工支部">继续教育学院教工支部</option>
+          <option value="建筑工程学院教工支部">建筑工程学院教工支部</option>
+          <option value="经济管理学院教工支部">经济管理学院教工支部</option>
+          <option value="农业经济技术学院教工支部">农业经济技术学院教工支部</option>
+          <option value="护理学院教工支部">师范学院教工支部</option>
+          
+          <option value="思想政治理论课教学科研部教工支部">思想政治理论课教学科研部教工支部</option>
+          <option value="文化旅游学院教工支部">文化旅游学院教工支部</option>
+          <option value="信息工程学院教工支部">信息工程学院教工支部</option>
+          <option value="学前教育学院教工支部">学前教育学院教工支部</option>
+          <option value="艺术学院教工支部">艺术学院教工支部</option>
+          
+          <option value="中专部教工支部">中专部教工支部</option>
         </select></br></br>
         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         	<input type="button" value="登录" class="button" id="submit">
@@ -47,9 +69,9 @@
           <p>所在部门</p>
         </div>
         <select name="examen_dpm" class="exam_dpm">
-          <option value="办公室">办公室</option>
-          <option value="教务处">教务处</option>
-          <option value="学生处">学生处</option>
+          <option value="非党员干部">非党员干部</option>
+          <option value="公共课教学部教工支部">公共课教学部教工支部</option>
+          <option value="护理学院教工支部">护理学院教工支部</option>
         </select>
         <input type="button" value="登录" class="button" id="submit">
       </form>
