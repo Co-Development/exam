@@ -11,6 +11,7 @@ import com.jjvu.exam.interceptor.LoginInterceptor;
  * @author SongM
  * @date 2017年10月28日 上午9:58:23
  */
+
 @Configuration
 public class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
 
