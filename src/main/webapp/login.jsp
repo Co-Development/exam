@@ -59,6 +59,7 @@
 
 <!-- login request -->
 <script type="text/javascript">
+
   $('#submit').on('click', function(){
     // 验证登录数据
     var examen_name = $('#examen_name').val();
