@@ -155,6 +155,7 @@
 				</c:forEach>
 
 		</div>
+		<input id="examTime" name="examTime" type="hidden" value="2700">
 		</form>
 		
 	</body>
@@ -197,6 +198,8 @@
 			index = index.substring(0,index.length-1);
 			alert("第"+index+"题未选择");
 		}else{
+			var time = $("leftTimeP").html();
+			$("#examTime").attr("value",time);
 			// ajax提交表单
 			$.ajax({
 				type:'POST',

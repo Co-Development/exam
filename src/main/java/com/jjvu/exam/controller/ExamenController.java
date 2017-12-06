@@ -1,6 +1,9 @@
 package com.jjvu.exam.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
@@ -294,9 +297,24 @@ public class ExamenController {
 	 * @return
 	 */
 	@RequestMapping(value = "/testSubmit", method = {RequestMethod.POST})
-	@ResponseBody HashMap<Object, Object> testSubmit(HttpServletRequest request, X1 x1, Y1 y1, X2 x2, Y2 y2, X3 x3, Y3 y3) {
+	@ResponseBody HashMap<Object, Object> testSubmit(HttpServletRequest request, String examTime, X1 x1, Y1 y1, X2 x2, Y2 y2, X3 x3, Y3 y3) {
 		HashMap<Object, Object> map = new HashMap<Object, Object>();
 //		map.put("state", 0); // state为0表示有题目还没做
+		
+		//String转换Date型
+		SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");//小写的mm表示的是分钟  
+		Date time;
+		Date examen_time;
+		Date totalTime;
+		try {
+			totalTime = sdf.parse("45:00");
+			time = sdf.parse(examTime);
+			long timeLong = totalTime.getTime() - time.getTime();
+			examen_time = new Date(timeLong);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			examen_time = new Date(0);
+		}
 		
 		int score = 0;
 //		try {
@@ -311,7 +329,7 @@ public class ExamenController {
 		// 通过考生ID查询考生信息
 		int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
 		// 将分数存入数据库
-		examenMapper.markScoreById(examen_id, score);
+		examenMapper.markScoreById(examen_id, score, examen_time);
 		
 		// 设置相应数据
 		map.put("state", 1);

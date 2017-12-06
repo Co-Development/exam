@@ -1,5 +1,7 @@
 package com.jjvu.exam.mapper;
 
+import java.util.Date;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -37,7 +39,7 @@ public interface ExamenMapper {
 	 * @param examen_id
 	 * @param score
 	 */
-	@Update("UPDATE `examen` SET `examen_score`=#{score} WHERE (`examen_id`=#{examen_id})")
-	void markScoreById(@Param("examen_id") int examen_id, @Param("score") int score);
+	@Update("UPDATE `examen` SET `examen_score`=#{score}, `examen_time`=#{time} WHERE (`examen_id`=#{examen_id})")
+	void markScoreById(@Param("examen_id") int examen_id, @Param("score") int score, @Param("time") Date time);
 	
 }
