@@ -13,7 +13,7 @@ public class Examen {
 	private String examen_name;
 	private String examen_dpm;
 	private int examen_score;
-	private Date examen_time;
+	private String examen_time;
 	public int getExamen_id() {
 		return examen_id;
 	}
@@ -38,10 +38,10 @@ public class Examen {
 	public void setExamen_score(int examen_score) {
 		this.examen_score = examen_score;
 	}
-	public Date getExamen_time() {
+	public String getExamen_time() {
 		return examen_time;
 	}
-	public void setExamen_time(Date examen_time) {
+	public void setExamen_time(String examen_time) {
 		this.examen_time = examen_time;
 	}
 	

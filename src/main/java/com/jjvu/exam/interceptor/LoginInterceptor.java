@@ -25,7 +25,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		Object object = request.getSession().getAttribute("exam-id");
 		if(object == null) {
 			// 重定向到登录界面
-			response.sendRedirect("/login.jsp");
+			response.sendRedirect("./login.jsp");
 			return false;
 		}
 		
