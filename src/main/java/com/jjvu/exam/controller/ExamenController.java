@@ -107,7 +107,7 @@ public class ExamenController {
 			int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
 			Examen examen = examenMapper.findById(examen_id);
 			// 验证考试是否完成
-			if(examen.getExamen_score() == 0) { // 还没考试，jsp显示开始考试按钮
+			if(examen.getExamen_time() == null) { // 还没考试，jsp显示开始考试按钮
 				model.addAttribute("exam_finish", false);
 			} else { // 考试完成，发送分数
 				model.addAttribute("exam_finish", true);
