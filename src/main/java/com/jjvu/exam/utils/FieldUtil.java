@@ -16,7 +16,7 @@ public class FieldUtil {
 	 * @param o
 	 * @return
 	 */
-	private static String getFieldValueByName(String fieldName, Object o) {
+	private static Object getFieldValueByName(String fieldName, Object o) {
 		
 		try {
 			//获得属性名的首字母将其大写
@@ -25,7 +25,7 @@ public class FieldUtil {
 			String getter = "get" + firstLetter + fieldName.substring(1);
 			//获得方法对象，并执行
 			Method method = o.getClass().getMethod(getter);
-			String value = (String) method.invoke(o);
+			Object value = method.invoke(o);
 			return value;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -52,22 +52,38 @@ public class FieldUtil {
 	    return fieldNames;
 	}
 	
-	
+	/**
+	 * 获取对象的所有属性值，返回一个对象数组 
+	 * @param object
+	 * @return 
+	 */
+	public static String[] getStringValues(Object object) {
+		String[] fieldNames = getFiledName(object);
+		String[] value = new String[fieldNames.length];
+		
+		
+		for (int i = 0; i < value.length; i++) {
+			value[i] = (String) getFieldValueByName(fieldNames[i], object);
+		}
+		
+		return value;
+	}
 	
 	/**
 	 * 获取对象的所有属性值，返回一个对象数组 
 	 * @param object
 	 * @return 
 	 */
-	public static String[] getObjectValues(Object object) {
+	public static Integer[] getIntegerValues(Object object) {
 		String[] fieldNames = getFiledName(object);
-		String[] value = new String[fieldNames.length];
+		Integer[] value = new Integer[fieldNames.length];
+		
 		
 		for (int i = 0; i < value.length; i++) {
-			value[i] = getFieldValueByName(fieldNames[i], object);
+			value[i] = (Integer) getFieldValueByName(fieldNames[i], object);
 		}
 		
 		return value;
 	}
-
+	
 }

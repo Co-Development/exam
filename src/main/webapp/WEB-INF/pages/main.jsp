@@ -19,11 +19,10 @@
 
 			<div class="box">
 				<div class="box-nav">
-					<h1>请不要重复登录</h1>
+					<h3>您已完成考试，考试成绩为：</h3>
 					<hr>
 				</div>
 				<div style="text-align: center;">
-					<p>您已完成考试，考试成绩为：</p>
 					<p id="score">${exam_score}</p>
 				</div>
 				<div>

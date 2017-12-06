@@ -26,8 +26,8 @@ public class MarkScore {
 	 */
 	public static int sum1(X1 x1, Y1 y1) {
 		
-		String x1Scores[] = FieldUtil.getObjectValues(x1);
-		String y1Scores[] = FieldUtil.getObjectValues(y1);
+		String[] x1Scores = FieldUtil.getStringValues(x1);
+		String[] y1Scores = FieldUtil.getStringValues(y1);
 		
 		int count = 0;
 		
@@ -50,21 +50,26 @@ public class MarkScore {
 		
 		int count = 20;
 		
-		String x2Scores[] = FieldUtil.getObjectValues(x2);
-		String y2Scores[] = FieldUtil.getObjectValues(y2);
+		String[] x2Scores = FieldUtil.getStringValues(x2);
+		String[] y2Scores = FieldUtil.getStringValues(y2);
 		
 		for (int i = 0; i < x2Scores.length; i++) {
-			if(x2Scores[i].length() == y2Scores[i].length()) {
-				String[] split = x2Scores[i].split(",");
-				for (String string : split) {
-					if(y2Scores[i].indexOf(string) == -1) {
-						count--;
-						break;
+			if(x2Scores[i] != null) {
+				if(x2Scores[i].length() == y2Scores[i].length()) {
+					String[] split = x2Scores[i].split(",");
+					for (String string : split) {
+						if(y2Scores[i].indexOf(string) == -1) {
+							count--;
+							break;
+						}
 					}
+				}else {
+					count--;
 				}
 			}else {
 				count--;
 			}
+			
 		}
 		
 		return count;
@@ -78,8 +83,8 @@ public class MarkScore {
 	 */
 	public static int sum3(X3 x3, Y3 y3) {
 		
-		String x3Scores[] = FieldUtil.getObjectValues(x3);
-		String y3Scores[] = FieldUtil.getObjectValues(y3);
+		Integer[] x3Scores = FieldUtil.getIntegerValues(x3);
+		Integer[] y3Scores = FieldUtil.getIntegerValues(y3);
 		
 		int count = 0;
 		

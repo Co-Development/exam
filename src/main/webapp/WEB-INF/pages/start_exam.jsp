@@ -206,7 +206,7 @@
 				data:$('#exam_form').serialize(),
 				dataType:'json',
 				success:function(data){
-						location.href=data.url;
+					location.href=data.url;
 				},
 				error:function(XMLHttpRequest, textStatus, errorThrown){
 					alert(textStatus+XMLHttpRequest.status);  

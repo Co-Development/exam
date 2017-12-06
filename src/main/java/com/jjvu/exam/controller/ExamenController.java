@@ -309,6 +309,8 @@ public class ExamenController {
 		String examen_time;
 		try {
 			totalTime = sdf.parse("45:00");
+			
+			if(examTime == null) examTime = "00:00";
 			time = sdf.parse(examTime);
 			long timeLong = totalTime.getTime() - time.getTime();
 			dtime = new Date(timeLong);
