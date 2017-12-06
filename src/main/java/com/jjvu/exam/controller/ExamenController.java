@@ -304,16 +304,18 @@ public class ExamenController {
 		//String转换Date型
 		SimpleDateFormat sdf = new SimpleDateFormat("mm:ss");//小写的mm表示的是分钟  
 		Date time;
-		Date examen_time;
+		Date dtime;
 		Date totalTime;
+		String examen_time;
 		try {
 			totalTime = sdf.parse("45:00");
 			time = sdf.parse(examTime);
 			long timeLong = totalTime.getTime() - time.getTime();
-			examen_time = new Date(timeLong);
+			dtime = new Date(timeLong);
+			examen_time = sdf.format(dtime);
 		} catch (ParseException e) {
 			e.printStackTrace();
-			examen_time = new Date(0);
+			examen_time = sdf.format("00:00");
 		}
 		
 		int score = 0;

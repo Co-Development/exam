@@ -40,6 +40,6 @@ public interface ExamenMapper {
 	 * @param score
 	 */
 	@Update("UPDATE `examen` SET `examen_score`=#{score}, `examen_time`=#{time} WHERE (`examen_id`=#{examen_id})")
-	void markScoreById(@Param("examen_id") int examen_id, @Param("score") int score, @Param("time") Date time);
+	void markScoreById(@Param("examen_id") int examen_id, @Param("score") int score, @Param("time") String time);
 	
 }
