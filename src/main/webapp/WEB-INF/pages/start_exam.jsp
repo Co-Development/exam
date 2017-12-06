@@ -198,7 +198,7 @@
 			index = index.substring(0,index.length-1);
 			alert("第"+index+"题未选择");
 		}else{
-			var time = $("leftTimeP").html();
+			var time = $("leftTimeP").text();
 			$("#examTime").attr("value",time);
 			// ajax提交表单
 			$.ajax({
