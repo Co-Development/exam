@@ -1,8 +1,5 @@
 package com.jjvu.exam.utils;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
 import com.jjvu.exam.po.X1;
 import com.jjvu.exam.po.X2;
 import com.jjvu.exam.po.X3;
@@ -32,11 +29,12 @@ public class MarkScore {
 		int count = 0;
 		
 		for (int i = 0; i < x1Scores.length; i++) {
-			if(x1Scores[i] == y1Scores[i]) {
+			//比较两个字符串是否相等
+			if(x1Scores[i].equals(y1Scores[i])) {
 				count++;
 			}
 		}
-		
+		System.out.println("单选题正确的分数" + count);
 		return count;
 	}
 
@@ -53,10 +51,11 @@ public class MarkScore {
 		String[] x2Scores = FieldUtil.getStringValues(x2);
 		String[] y2Scores = FieldUtil.getStringValues(y2);
 		
+
 		for (int i = 0; i < x2Scores.length; i++) {
 			if(x2Scores[i] != null) {
 				if(x2Scores[i].length() == y2Scores[i].length()) {
-					String[] split = x2Scores[i].split(",");
+					String[] split= x2Scores[i].split(",");
 					for (String string : split) {
 						if(y2Scores[i].indexOf(string) == -1) {
 							count--;
@@ -71,7 +70,7 @@ public class MarkScore {
 			}
 			
 		}
-		
+		System.out.println("多选题正确的分数" + count);
 		return count;
 	}
 
@@ -89,11 +88,12 @@ public class MarkScore {
 		int count = 0;
 		
 		for (int i = 0; i < x3Scores.length; i++) {
-			if(x3Scores[i] == y3Scores[i]) {
+			//比较两个字符串是否相等
+			if(x3Scores[i] .equals(y3Scores[i])) {
 				count++;
 			}
 		}
-		
+		System.out.println("判断题正确的分数" + count);
 		return count;
 
 	}

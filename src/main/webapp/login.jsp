@@ -46,6 +46,7 @@
           <option value="艺术学院教工支部">艺术学院教工支部</option>
           
           <option value="中专部教工支部">中专部教工支部</option>
+          <option value="学生处">学生处</option>
         </select></br></br>
         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         	<input type="button" value="登录" class="button" id="submit">

@@ -107,7 +107,7 @@ public class ExamenController {
 			int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
 			Examen examen = examenMapper.findById(examen_id);
 			// 验证考试是否完成
-			if(examen.getExamen_time() == null) { // 还没考试，jsp显示开始考试按钮
+			if(examen.getExamen_time() == null||examen.getExamen_time().equals("")) { // 还没考试，jsp显示开始考试按钮
 				model.addAttribute("exam_finish", false);
 			} else { // 考试完成，发送分数
 				model.addAttribute("exam_finish", true);
@@ -309,7 +309,6 @@ public class ExamenController {
 		String examen_time;
 		try {
 			totalTime = sdf.parse("45:00");
-			
 			if(examTime == null) examTime = "00:00";
 			time = sdf.parse(examTime);
 			long timeLong = totalTime.getTime() - time.getTime();
@@ -326,6 +325,7 @@ public class ExamenController {
 		score += MarkScore.sum1(x1, y1);
 		score += MarkScore.sum2(x2, y2);
 		score += MarkScore.sum3(x3, y3);
+		System.out.println("this is Controller Score: " + score);
 //		} catch (Exception e) {
 //			return map;
 //		}

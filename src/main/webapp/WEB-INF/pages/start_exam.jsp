@@ -107,7 +107,8 @@
 						<label>${status.count+45}、${test3.test_question}</label>
 						<div class="checkbox">
 							<label>
-								<input type="checkbox" name="x2_${status.count+45}" value="${test3.test_a} ">
+						   <!-- <input type="checkbox" name="x2_${status.count+45}" value="${test3.test_a} "> 多了一个空格 -->
+								<input type="checkbox" name="x2_${status.count+45}" value="${test3.test_a}">
 								A. ${test3.test_a} 
 							</label>
 						</div>

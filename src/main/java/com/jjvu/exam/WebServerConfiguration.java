@@ -14,7 +14,6 @@ public class WebServerConfiguration  {
     @Bean  
     public EmbeddedServletContainerFactory createEmbeddedServletContainerFactory(){  
         TomcatEmbeddedServletContainerFactory tomcatFactory = new TomcatEmbeddedServletContainerFactory();  
-        tomcatFactory.setPort(8080);  
         tomcatFactory.addConnectorCustomizers(new MyTomcatConnectorCustomizer());  
         return tomcatFactory;  
     }  
@@ -24,9 +23,9 @@ class MyTomcatConnectorCustomizer implements TomcatConnectorCustomizer  {
     public void customize(Connector connector){  
         Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();  
         //设置最大连接数  
-        protocol.setMaxConnections(2000);  
+        protocol.setMaxConnections(500);  
         //设置最大线程数  
-        protocol.setMaxThreads(2000);  
+        protocol.setMaxThreads(500);  
         protocol.setConnectionTimeout(30000);  
     }  
 } 
