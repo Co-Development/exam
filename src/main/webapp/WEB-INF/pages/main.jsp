@@ -19,11 +19,23 @@
 
 			<div class="box">
 				<div class="box-nav">
-					<h3>您已完成考试，考试成绩为：</h3>
+				<c:if test="${username!=null}">
+				<h3><span style="margin-right: 50px; ">${username}</span>您已完成考试，考试成绩为：</h3>
+				</c:if>
+					
 					<hr>
 				</div>
 				<div style="text-align: center;">
+					
+				<c:if test="${exam_score>=60}">
+				<p id="score" style="color: blue;">${exam_score}</p>
+				</c:if>
+				
+				<c:if test="${exam_score<60}">
 					<p id="score">${exam_score}</p>
+				</c:if>
+				
+				
 				</div>
 				<div>
 					<input class="button" type="button"

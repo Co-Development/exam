@@ -20,6 +20,10 @@
 			
 			<div class="container">
 				
+				<c:if test="${username!=null}">
+				<p class="navbar-text">用户:${username}</p>
+				</c:if>
+				
 				<p class="navbar-text">剩余时间</p>
 				<p class="navbar-text" id="leftTimeP">00:00</p>
 

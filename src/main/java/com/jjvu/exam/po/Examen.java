@@ -44,5 +44,10 @@ public class Examen {
 	public void setExamen_time(String examen_time) {
 		this.examen_time = examen_time;
 	}
+	@Override
+	public String toString() {
+		return "Examen [examen_id=" + examen_id + ", examen_name=" + examen_name + ", examen_dpm=" + examen_dpm
+				+ ", examen_score=" + examen_score + ", examen_time=" + examen_time + "]";
+	}
 	
 }
