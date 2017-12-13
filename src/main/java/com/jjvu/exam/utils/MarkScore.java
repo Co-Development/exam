@@ -29,9 +29,11 @@ public class MarkScore {
 		int count = 0;
 		
 		for (int i = 0; i < x1Scores.length; i++) {
-			//比较两个字符串是否相等
-			if(x1Scores[i].equals(y1Scores[i])) {
-				count++;
+			if (x1Scores[i]!=null) {
+				//比较两个字符串是否相等
+				if (x1Scores[i].equals(y1Scores[i])) {
+					count++;
+				} 
 			}
 		}
 		System.out.println("单选题正确的分数" + count);
@@ -88,9 +90,11 @@ public class MarkScore {
 		int count = 0;
 		
 		for (int i = 0; i < x3Scores.length; i++) {
-			//比较两个字符串是否相等
-			if(x3Scores[i] .equals(y3Scores[i])) {
-				count++;
+			if (x3Scores[i]!=null) {
+				//比较两个字符串是否相等
+				if (x3Scores[i].equals(y3Scores[i])) {
+					count++;
+				} 
 			}
 		}
 		System.out.println("判断题正确的分数" + count);
