@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <title>登录</title>
-<link href="login.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/assets/css/login.css" rel="stylesheet" type="text/css" />
 <script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 

@@ -59,8 +59,8 @@ public class ExamenController {
 
 	@Autowired
 	private Test4Mapper test4Mapper;
-	private String begintime;
-	private String endtime;
+	/*private String begintime;
+	private String endtime;*/
 
 	/**
 	 * 考生登录
@@ -137,7 +137,7 @@ public class ExamenController {
 	 * @return
 	 */
 	@RequestMapping(value = "/start", method = { RequestMethod.GET })
-	String start(Model model) {
+	String start(HttpServletRequest request,Model model) {
 		// 容器初始化-考试试卷题
 		ArrayList<Test1> list1 = new ArrayList<Test1>();
 		ArrayList<Test2> list2 = new ArrayList<Test2>();
@@ -287,7 +287,10 @@ public class ExamenController {
 			Test4 test4 = test4Mapper.findById(id);
 			list4.add(test4);
 		}
-		begintime = current_time();
+		//将时间存到session中
+		HttpSession session = request.getSession();
+		session.setAttribute("begintime",current_time());
+		System.out.println("用户：" + request.getSession().getAttribute("username").toString()+"开始的时间："+session.getAttribute("begintime"));
 		// 将试题发送至jsp
 		model.addAttribute("list1", list1);
 		model.addAttribute("list2", list2);
@@ -296,6 +299,7 @@ public class ExamenController {
 
 		return "start_exam";
 	}
+		
 
 	/**
 	 * 提交试卷并打分
@@ -322,7 +326,7 @@ public class ExamenController {
 		score += MarkScore.sum2(x2, y2);
 		score += MarkScore.sum3(x3, y3);
 		System.out.println("用户：" + request.getSession().getAttribute("username").toString()
-				+ "    this is Controller Score: " + score);
+				+ " 总分是: " + score);
 		// } catch (Exception e) {
 		// return map;
 		// }
@@ -330,14 +334,14 @@ public class ExamenController {
 		// 通过考生ID查询考生信息
 		int examen_id = Integer.parseInt(request.getSession().getAttribute("exam-id").toString());
 		// 将分数存入数据库
-
-		endtime = current_time();
-
+		String endtime=current_time();
+		System.out.println("用户：" + request.getSession().getAttribute("username").toString()+"开始的时间："+request.getSession().getAttribute("begintime")+"结束的时间是："+ endtime);
 		long date1 = 0;
 		long date2 = 0;
 		try {
-			SimpleDateFormat sdfs = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-			date1 = sdfs.parse(begintime).getTime();
+			//使用的时间是12小时制hh ，需要更改为24小时制 HH
+			SimpleDateFormat sdfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			date1 = sdfs.parse((String) request.getSession().getAttribute("begintime")).getTime();
 			date2 = sdfs.parse(endtime).getTime();
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
@@ -346,8 +350,8 @@ public class ExamenController {
 
 		int minutess = (int) (((date2 - date1) / 1000) / 60);
 		int seconds = (int) (((date2 - date1) / 1000) % 60);
-
-		System.out.println("用户答题时间为：" + (minutess < 10 ? "0" + minutess : minutess) + ":"
+		
+		System.out.println("用户：" + request.getSession().getAttribute("username").toString()+"用户答题时间为：" + (minutess < 10 ? "0" + minutess : minutess) + ":"
 				+ (seconds < 10 ? "0" + seconds : seconds));
 		examenMapper.markScoreById(examen_id, score,
 				(minutess < 10 ? "0" + minutess : minutess) + ":" + (seconds < 10 ? "0" + seconds : seconds));

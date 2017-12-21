@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../assets/css/tips.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/tips.css">
 <title>tips</title>
 </head>
 <body>
@@ -39,7 +39,7 @@
 				</div>
 				<div>
 					<input class="button" type="button"
-						onclick="location.href='../login.jsp'" value="返回登录">
+						onclick="location.href='${pageContext.request.contextPath}/login.jsp'" value="返回登录">
 				</div>
 			</div>
 		</div>

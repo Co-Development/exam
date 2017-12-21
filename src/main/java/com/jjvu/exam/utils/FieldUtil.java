@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.junit.Test;
 
 /**
  * 处理对象类

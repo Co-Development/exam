@@ -6,10 +6,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Document</title>
-		<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css">
 		<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="../assets/js/leftTime.min.js"></script>
-		<script src="../assets/js/custom.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/leftTime.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/custom.js"></script>
 	</head>
 	<body style="padding-top: 50px; background-color:#e0f1f8">
 	
@@ -33,10 +33,10 @@
 		
 		<!---->
 
-		<div class="jumbotron top" style="height: 180px; background:url('../assets/img/bg_top.png');">
+		<div class="jumbotron top" style="height: 180px; background:url('${pageContext.request.contextPath}/assets/img/bg_top.png');">
 		<div class="container">
-			<div style="height: 130px;width: 490px;background: url('../assets/img/201710161448522732.png');"></div>
-			<div style="height: 180px;width: 600px;background: url('../assets/img/baifan.png');margin: -180px 490px;position: relative;">
+			<div style="height: 130px;width: 490px;background: url('${pageContext.request.contextPath}/assets/img/201710161448522732.png');"></div>
+			<div style="height: 180px;width: 600px;background: url('${pageContext.request.contextPath}/assets/img/baifan.png');margin: -180px 490px;position: relative;">
 			</div>
 		</div>
 		</div>
